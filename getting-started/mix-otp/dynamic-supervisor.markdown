@@ -29,7 +29,7 @@ test "removes bucket on crash", %{registry: registry} do
 
   # Stop the bucket with non-normal reason
   Agent.stop(bucket, :shutdown)
-  assert KV.Registry.lookup(registry, "shopping") == :error
+  assert KV.Registry.lookup(registry, bucket) == :error
 end
 ```
 
